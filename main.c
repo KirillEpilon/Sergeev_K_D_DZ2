@@ -111,7 +111,7 @@ void Request(){
 	en |= (GPIOA->IDR & 4096) << 12;
 	fl=1;
 			TIM6_Init();
-	while ((GPIOA->IDR & 256)) //êíîïêà çàæàòà
+	while ((GPIOA->IDR & 256)) //ÃªÃ­Ã®Ã¯ÃªÃ  Ã§Ã Ã¦Ã Ã²Ã 
 	{
 		if ((TIM6->SR & TIM_SR_UIF) == TIM_SR_UIF){
 
@@ -138,7 +138,7 @@ void Request(){
 
 	}
 	fl=0;
-	if (!(GPIOA->IDR & 256)) //êíîïêó íàæàëè è îòïóñòèëè
+	if (!(GPIOA->IDR & 256)) //ÃªÃ­Ã®Ã¯ÃªÃ³ Ã­Ã Ã¦Ã Ã«Ã¨ Ã¨ Ã®Ã²Ã¯Ã³Ã±Ã²Ã¨Ã«Ã¨
 		Transmit();
 
 }
@@ -163,6 +163,7 @@ void Transmit(){
 		GPIOB->BSRR |= GPIO_BSRR_BS_1;
 		GPIOB->BSRR &= 0;
 		i++;
+		j = 8;
 	}
 
 }
